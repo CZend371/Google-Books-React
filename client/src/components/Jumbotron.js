@@ -1,10 +1,17 @@
 import React from "react";
 
-function Jumbotron({ children }) {
+const style = {
+    jumbotron: {
+        textAlign: "center",
+        backgroundColor: "#4698f0"
+    }
+}
+function Jumbotron() {
     return (
-        <div className="Jumbotron">
-            Google Books
-</div>
+        <div className="jumbotron jumbotron-fluid" style={style.jumbotron}>
+            <h1>Google Books</h1>
+            <p>Search for a book!</p>
+        </div>
 
     );
 }
