@@ -1,6 +1,6 @@
 import axios from "axios";
 
-// APIKEY=AIzaSyDqaGEyxVCtRdIimD0UF95B9G7CxBixQUc
+
 
 export default {
     // Gets all books
