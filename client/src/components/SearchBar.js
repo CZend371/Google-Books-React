@@ -3,6 +3,9 @@ import React from "react";
 const styles = {
     form: {
         textAlign: "center",
+    },
+    button: {
+        margin: 10
     }
 }
 function SearchBar(props) {
@@ -15,7 +18,7 @@ function SearchBar(props) {
                 name="search"
                 placeholder="Search for a book!">
             </input>
-            <button onClick={props.handleFormSubmit} type="submit">Submit</button>
+            <button className="btn btn-primary" onClick={props.handleFormSubmit} style={styles.button} type="submit">Search</button>
         </form>
     )
 }

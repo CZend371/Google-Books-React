@@ -1,8 +1,8 @@
 {
-  "name": "google-books-react",
+  "name": "Google-Books-React",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Google Books",
+  "main": "server.js",
   "scripts": {
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
     "start:prod": "node server.js",
@@ -12,19 +12,15 @@
     "build": "cd client && npm run build",
     "heroku-postbuild": "npm run build"
   },
-  "dependencies": {
-    "mongoose": "^5.6.13",
-    "react-router-dom": "^5.0.1"
-  },
-  "devDependencies": {},
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/CZend371/Google-Books-React.git"
-  },
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/CZend371/Google-Books-React/issues"
+  "devDependencies": {
+    "concurrently": "^4.1.0",
+    "nodemon": "^1.18.7"
   },
-  "homepage": "https://github.com/CZend371/Google-Books-React#readme"
+  "dependencies": {
+    "express": "^4.16.3",
+    "if-env": "^1.0.4",
+    "mongoose": "^5.7.1"
+  }
 }

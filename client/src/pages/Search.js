@@ -1,14 +1,18 @@
 import React, { Component } from "react";
 import SearchBar from "../components/SearchBar";
 import Results from "../components/Results";
-
 import API from "../utils/API";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+// import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 class Search extends Component {
     state = {
         books: [],
-        search: ""
+        search: "",
+        title: "",
+        author: "",
+        description: "",
+        image: "",
+        link: ""
     };
     componentDidMount() {
         this.renderBooks("Preston and Child");
@@ -35,21 +39,20 @@ class Search extends Component {
         this.renderBooks(this.state.search);
       };
 
-    //   SaveBook = event => {
-    //     if (this.state.volumeInfo.title && this.state.volumeInfo.author) {
-    //         API.saveBook({
-    //           title: this.state.volumeInfo.title,
-    //           author: this.state.volumeInfo.author,
-    //           description: this.state.volumeInfo.description,
-    //           image: this.state.volumeInfo.imageLinks.thumbnail,
-    //           link: this.state.volumeInfo.infoLink
-    //         })
-    //        
-    //           .catch(err => console.log(err));
-    //       }
-    //   };
+      save = event => {
+        if (this.state.volumeInfo.title && this.state.volumeInfo.author) {
+            API.saveBook({
+              title: this.state.volumeInfo.title,
+              author: this.state.volumeInfo.author,
+              description: this.state.volumeInfo.description,
+              image: this.state.volumeInfo.imageLinks.thumbnail,
+              link: this.state.volumeInfo.infoLink
+            })
+              .catch(err => console.log(err));
+          }
+      };
 
-    // Need a save button to save book to database
+    // Save button is created. Need to figure out how to save to database using handleinputchange function
     render() {
         {console.log(this.state.books)}
         return (
@@ -66,6 +69,7 @@ class Search extends Component {
                     title={book.volumeInfo.title}
                     author={book.volumeInfo.authors}
                     description={book.volumeInfo.description}
+                    onClick={this.save}
                     />
                 ))}
             </div>
