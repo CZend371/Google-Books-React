@@ -2,7 +2,7 @@ import axios from "axios";
 
 const key = process.env.API_KEY;
 const BASEURL = "https://www.googleapis.com/books/v1/volumes?q=";
-const APIKEY = "+key=" + key;
+const APIKEY = "key=" + key;
 
 export default {
     // Searches Google API for books

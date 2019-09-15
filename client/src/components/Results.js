@@ -23,9 +23,9 @@ function Results(props) {
     return (
         <div className="container">
             <div className="box" style={styles.box}>
-                <button className="btn btn-info" style={styles.button} type="submit" onClick={props.save}>Save</button>
+                <button className="btn btn-info" style={styles.button} type="submit" id={props.id} onClick={props.onClick}>Save</button>
                 <ul>
-                    <ul><img src={props.image} style={styles.img}></img></ul>
+                    <ul><img src={props.image} style={styles.img} alt=""></img></ul>
                     <ul><a href={props.link}>Click here to buy!</a></ul>
                     <ul><strong>Title: {props.title}</strong></ul>
                     <ul><strong>Author: {props.author}</strong></ul>
