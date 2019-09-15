@@ -11,10 +11,10 @@ class Search extends Component {
         search: ""
     };
     componentDidMount() {
-        this.loadBooks("Preston and Child");
+        this.renderBooks("Preston and Child");
     }
 
-    loadBooks = (query) => {
+    renderBooks = (query) => {
         API.searchBooks(query)
             .then(res =>
                 this.setState({ books: res.data.items }),
@@ -32,7 +32,7 @@ class Search extends Component {
     
       handleFormSubmit = event => {
         event.preventDefault();
-        this.loadBooks(this.state.search);
+        this.renderBooks(this.state.search);
       };
 
     //   SaveBook = event => {
@@ -44,11 +44,12 @@ class Search extends Component {
     //           image: this.state.volumeInfo.imageLinks.thumbnail,
     //           link: this.state.volumeInfo.infoLink
     //         })
-    //           .then(res => this.loadBooks())
+    //        
     //           .catch(err => console.log(err));
     //       }
     //   };
 
+    // Need a save button to save book to database
     render() {
         {console.log(this.state.books)}
         return (
