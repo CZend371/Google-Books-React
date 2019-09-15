@@ -4,7 +4,7 @@ import API from "../utils/API";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import SavedBooksCont from "../components/SavedBooksCont";
 
-class Saved extends Components {
+class Saved extends Component {
     state = {
         books: [],
         title: "",

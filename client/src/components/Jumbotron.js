@@ -10,7 +10,6 @@ function Jumbotron() {
     return (
         <div className="jumbotron jumbotron-fluid" style={style.jumbotron}>
             <h1>Google Books</h1>
-            <p>Search for a book!</p>
         </div>
 
     );

@@ -1,8 +1,14 @@
 import axios from "axios";
 
-
+const key = process.env.API_KEY;
+const BASEURL = "https://www.googleapis.com/books/v1/volumes?q=";
+const APIKEY = "+key=" + key;
 
 export default {
+    // Searches Google API for books
+    searchBooks: function (query) {
+        return axios.get(BASEURL + query + APIKEY);
+    },
     // Gets all books
     getBooks: function () {
         return axios.get("/api/books");
