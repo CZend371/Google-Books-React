@@ -13,7 +13,7 @@ function Navbar() {
                     <li className="nav-item active">
                         <a className="nav-link" href="/search">Search <span className="sr-only">(current)</span></a>
                     </li>
-                    <li className="nav-item">
+                    <li className="nav-item active">
                         <a className="nav-link" href="/saved">Saved</a>
                     </li>
                 </ul>

@@ -38,9 +38,7 @@ class Search extends Component {
     save = event => {
         event.preventDefault();
         console.log(this.state.books)
-        let savedBooks = this.state.books.filter(book => book.id === event.target.id)
-        savedBooks = savedBooks[0];
-        API.saveBook(savedBooks)
+        API.saveBook()
             .then(console.log("book saved!"))
             .catch(err => console.log(err))
     };

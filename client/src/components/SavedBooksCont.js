@@ -21,17 +21,15 @@ const styles = {
 
 function SavedBooksCont(props) {
     return (
-        props.savedBooks
-        // <div className="saved-books">
-        //     <ul>
-        //         <ul><strong>Title: {props.id}</strong></ul>
-        //         <ul><img src={props.image} style={styles.img} alt=""></img></ul>
-        //         <ul><a href={props.link}>Click here to buy!</a></ul>
-        //         <ul><strong>Title: {props.title}</strong></ul>
-        //         <ul><strong>Author: {props.author}</strong></ul>
-        //         <ul style={styles.ul}>Description {props.description}</ul>
-        //     </ul>
-        // </div>
+        <div className="saved-books">
+            <ul>
+                <ul><img src={props.image} style={styles.img} alt=""></img></ul>
+                <ul><a href={props.link}>Click here to buy!</a></ul>
+                <ul><strong>Title: {props.title}</strong></ul>
+                <ul><strong>Author: {props.author}</strong></ul>
+                <ul style={styles.ul}>Description {props.description}</ul>
+            </ul>
+        </div>
     )
 }
 export default SavedBooksCont;

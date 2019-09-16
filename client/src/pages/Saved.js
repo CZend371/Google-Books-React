@@ -1,17 +1,11 @@
 import React, { Component } from "react";
 import API from "../utils/API";
-// import Search from "../pages/Search";
-// import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import SavedBooksCont from "../components/SavedBooksCont";
+
 
 class Saved extends Component {
     state = {
-        savedBooks: [],
-        title: "",
-        author: "",
-        description: "",
-        image: "",
-        link: ""
+        savedBooks: []
     };
     componentDidMount() {
         this.loadBooks();
@@ -20,11 +14,10 @@ class Saved extends Component {
     loadBooks = () => {
         API.getBooks()
             .then(res =>
-                this.setState({ savedBooks: res.data.items }),
+                this.setState({ savedBooks: res.data }),
                 console.log(this.state.savedBooks)
             )
             .catch(err => console.log(err));
-        console.log(this.state.savedBooks);
     };
 
     deleteBook = id => {
@@ -35,26 +28,20 @@ class Saved extends Component {
 
     render() {
         return (
-            <div>
 
-                <SavedBooksCont
-                    savedBooks={this.state.savedBooks}
-                    handleDeleteButton={this.deleteBook}
-                // key={book.id}
-                // id={book.id}
-                // image={book.volumeInfo.imageLink.thumbnail}
-                // link={book.volumeInfo.infoLink}
-                // title={book.volumeInfo.title}
-                // author={book.volumeInfo.author}
-                // description={book.volumeInfo.description}
-                />
+            <SavedBooksCont
 
-                }
-            </div>
+            // key={book.id}
+            // id={book.id}
+            // image={book.image}
+            // link={book.link}
+            // title={book.title}
+            // author={book.author}
+            // description={book.description}
+            />
+
         )
     }
-
-
 }
 
 export default Saved;
